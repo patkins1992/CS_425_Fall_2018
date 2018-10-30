@@ -1,0 +1,1 @@
+Only css is to be added to this folder
