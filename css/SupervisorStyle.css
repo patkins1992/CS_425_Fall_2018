@@ -12,16 +12,13 @@ body{
     font-size: 14px;
 }
 
-.top-of-page {
+header.head {
     padding-top: 4px;
     padding-bottom: 45px;
     background-color: black;
-    display: block;
-    
-  
-    
+    display: block;   
 }
-.io_img {
+img.io_img {
     float: left;
     margin-top: 0;
     margin-left: 40px;
@@ -31,14 +28,14 @@ body{
     
     
 }
-.siue_logo {
+img.siue_logo {
     height: 15em;
     width: 30em;
     float: right;
     margin-right:  5em;
     margin-top: 5px;
 }
-.io_h1 {
+h1.io_h1 {
     font-size: 36pt;
     color: white;
     margin-top: 40px;
