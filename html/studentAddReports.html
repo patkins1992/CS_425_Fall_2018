@@ -10,7 +10,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Student page</title>
-    <link rel="stylesheet" type="text/css" href="../css/studentViewReports.css">
+    <link rel="stylesheet" type="text/css" href="../css/studentAddReport.css">
   </head>
   <body>
     <!--main container for the whole page-->
@@ -40,17 +40,20 @@
       <div class="sub_nav">
       <ul>
         <li><a href="./student.html">Search Reports</a></li>
-        <li><a class = "active" href="./studentViewReports.html">Your Reports</a></li>
-        <li><a href="./studentAddReports.html">Add Report</a></li>
+        <li><a  href="./studentViewReports.html">Your Reports</a></li>
+        <li><a class = "active" href="./studentAddReports.html">Add Report</a></li>
       </ul>
     </div>
-    <div class ="StudentReports">
+    <div class ="AddReports">
+          <div class = "DropBox">
+            <img class = "folder-pic" src = "../images/sub-folder-clipart-1.jpg">
+            <a>Add your reports you would like to upload</a>
+
+          </div>
+          <button class = "Add"> Select File </button>
+          <button class = "Select"> Add </button>
         <form>
-        <a class = "Reports"> Most_Recent_Report.pdf </a>
-        <!-- This is swapped around to put the view reports first -->
-        <button class ="ViewReports"> Delete</button>
-        
-        <button class = "DeleteReports">View</button>
+
         </form>
     </div>
    
