@@ -1,0 +1,137 @@
+*{
+    border:0;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body{
+    font-size: 14px;
+}
+
+.head {
+    padding-top: 4px;
+    padding-bottom: 45px;
+    background-color: black;
+    display: block;
+    
+  
+    
+}
+/* image styling */
+.io_img {
+    float: left;
+    margin-top: 0;
+    margin-left: 40px;
+    margin-right: 60px;
+    padding: 0 30px;
+    width: 20em;
+    
+    
+}
+
+.siue_logo {
+    width: 20em;      
+}
+
+.siue_faculty {
+    height: 15em;
+    width: 30em;
+    float: right;
+    margin-right:  5em;
+    margin-top: 5px;
+}
+
+/*header styling */
+.io_h1 {
+    font-size: 36pt;
+    color: white;
+    margin-top: 40px;
+    padding-right: 40px;
+        
+}
+
+/* nav bar */
+.navbar{
+    border-top: 3px solid transparent;
+    border-radius: 20px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+   
+}
+
+.navbar li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+/* admin account details */
+
+.account_info{
+    margin-top:5%;
+    margin-left: 25%;
+    margin-right:25%;
+    font-size:30px;
+    color:rgb(54, 54, 54);
+  
+    
+}
+
+.account_info h2{
+    font-size:18px;
+}
+
+.account_info p{
+    font-size:15px;
+    color:black;
+}
+
+.button{
+    font-size: 12px;
+    background-color: darkgray;
+    border-radius: 20px;
+    padding: 5px;  
+   
+}
+
+.button:hover{
+    background-color:rgba(39, 39, 39, 0.931);
+}
+
+.account_details_div1{     
+    
+    float:left;
+    margin-right: 9%;
+    margin-left:5%;
+}
+
+.account_details_div2{  
+   
+    float:left;
+    margin-left: 5%;
+}
+
