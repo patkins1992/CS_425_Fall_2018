@@ -82,11 +82,11 @@ li a {
 }
 
 li a:hover:not(.active) {
-    background-color: #111;
+    background-color:darkslategray;
 }
 
 .active {
-    background-color: #4CAF50;
+    color: #4CAF50;
 }
 
 /* sub_navbar */
