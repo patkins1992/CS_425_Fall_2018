@@ -74,7 +74,7 @@ ul {
 
 li a {
     display: block;
-    color: white;
+    color: lightgray;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -102,7 +102,7 @@ li a:hover:not(.active) {
     float: left;
 }
 .sub_nav li a{ 
-    color: white;
+    color: lightgray;
 }
 
 .sub_nav{
@@ -146,6 +146,19 @@ padding: 5px;
 /* current active page */
 .active {
     color: #4CAF50;
+}
+
+/*current active tab */
+.sub_nav li a.active {
+    color:  #4CAF50;
+}
+
+/* search bar formatting */
+.search p{
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-bottom: 5%;
+    font-size: 20px;
 }
 
 
