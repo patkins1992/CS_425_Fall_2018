@@ -86,7 +86,7 @@ li a:hover:not(.active) {
 }
 
 .active {
-    background-color: #4CAF50;
+    color: #4CAF50;
 }
 
 /* admin account details */
