@@ -29,7 +29,7 @@
     <nav class="navbar">
       <ul>
         <li><a class="active" href="#Home">Home</a></li>
-        <li><a href= "./HomeScreen.html">Logout</a></li>
+        <li><a href= "../html/HomeScreen.html">Logout</a></li>
       </ul>
     </nav>
     <!--end of navbar-->
@@ -39,9 +39,9 @@
 
       <div class="sub_nav">
       <ul>
-        <li><a href="./student.html">Search Reports</a></li>
-        <li><a  href="./studentViewReports.html">Your Reports</a></li>
-        <li><a class = "active" href="./studentAddReports.html">Add Report</a></li>
+        <li><a href="../html/student.html">Search Reports</a></li>
+        <li><a  href="../html/studentViewReports.html">Your Reports</a></li>
+        <li><a class = "active" href="../html/studentAddReports.html">Add Report</a></li>
       </ul>
     </div>
     <div class ="AddReports">
@@ -50,8 +50,11 @@
             <a>Add your reports you would like to upload</a>
 
           </div>
-          <button class = "Add"> Select File </button>
-          <button class = "Select"> Add </button>
+          <form method = "post" enctype = "multipart/form-data">
+          <!--opens file explorer for only for pdfs-->
+          <input type = "file" name = "myfile" accept = "application/pdf"/>
+          <button name = "Select"> Add </button> <!--is used in test.php to upload files-->
+          </form>
         <form>
 
         </form>
