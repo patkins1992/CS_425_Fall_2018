@@ -82,24 +82,39 @@ $con = mysqli_connect("127.0.0.1","root" ,"","iopracticum");
                     <h2>Security answer</h2>
                     <p>N/A</p>
                 </p>
-                <a href=# class="button">Change Security information</a>
+                <button class="button"><a href="https://oitam.isg.siue.edu/~eid/cgi-bin/e-ID"> Change Password</a> </button>
             </div>
 
         </div>
         <!--end of account info div-->
         <div id = "Change" class = "modal">
             <div class="modal-content">
-            <form action = "" method = "post">
             <span class="close">&times;</span>
+            <form action = "" method = "post">
             Eid:<br>
-            <input type = "text" class = "AdminName" name = "NewEid" id = "NewEid"/><br>
+            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
             First and Last Name:<br>
-            <input type ="text" class = "AdminName" name = "NewName" id = "NewName"/><br>
+            <input type ="text" class = "AdminName" name = "NewName"/><br>
             Contact Email:<br>
-            <input type ="text" class = "AdminEmail" name = "NewEmail" id = "NewEmail"/><br>
+            <input type ="text" class = "AdminEmail" name = "NewEmail"/><br>
             <input name = "submit" type = "submit"/>
             </form>
             <?php
+            if(isset($_POST['submit'])){
+                $Eid = $_POST['NewEid'];
+                $name = $_POST['NewName'];
+                $email = $_POST['NewEmail'];
+                $deleteAdmin = "DELETE FROM `admin` WHERE 1";
+                mysqli_query($con,$deleteAdmin);
+                $insert = "INSERT INTO `user`(`eid`, `name`) VALUES ('$Eid','$name')";
+                $adminInsert = "INSERT INTO `admin`(`AdmEid`,`email`,`Name`) VALUES ('$Eid','$email','$name')";
+                mysqli_query($con,$insert);
+                mysqli_query($con,$adminInsert);
+               
+            
+            }
+
+
 
             ?>
             </div>
