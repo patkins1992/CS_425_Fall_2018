@@ -6,7 +6,7 @@
 
 <?php
 
-$con = mysqli_connect("127.0.0.1","root" ,"","iopracticum");
+$con = mysqli_connect("localhost","root" ,"","iopracticum");
 
 
 ?>
@@ -18,6 +18,9 @@ $con = mysqli_connect("127.0.0.1","root" ,"","iopracticum");
   <meta charset="UTF-8">
   <title>Admin login</title>
   <link rel="stylesheet" type="text/css" href="../css/theme.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/reportSearch.js"></script>
+  
 </head>
 
 <body>
@@ -58,36 +61,46 @@ $con = mysqli_connect("127.0.0.1","root" ,"","iopracticum");
         </ul>
       </div>
 
-      <form class="dropbox">
+      <form class="dropbox"  >
         <label for="option">By Company: </label>
-        <select class="option">
+        <select class="option" id="company">
+        <option value="allCompanys">All</option>
           <?php  $query = mysqli_query($con,"SELECT name FROM location"); 
           if (mysqli_num_rows($query) > 0) {
             // output data of each company name
             while($row = mysqli_fetch_assoc($query)) {
-              echo '<option value="' . $row["id"] . '">' . $row["name"] . '</option>';
+              echo '<option value="' . $row["name"] . '">' . $row["name"] . '</option>';
             }
           } 
+          mysqli_close($con);
           ?>  
         </select>
 
         <label for="option">By Year: </label>
-        <select class="option">
-          <option value="33">2019</option>
-          <option value="33">2018</option>
-          <option value="33">2017</option>
-          <option value="33">2016</option>
-          <option value="33">2015</option>
-          <option value="33">2014</option>
+        <select class="option" id="date">
+          <option value="allYears">All</option>
+          <option value="2019">2019</option>
+          <option value="2018">2018</option>
+          <option value="2017">2017</option>
+          <option value="2016">2016</option>
+          <option value="2015">2015</option>
+          <option value="2014">2014</option>
         </select>
 
-        <input type="submit" class="button" value="Search" style="border:2;" />
+        <button type="button" class="button" value="Search" style="border:2;" onclick="reportSearch()">Search</button>
+    
       </form>
+      
+      <!-- will display search results -->
+      <div id="results">Information will be displayed here</div>
+      <div id="fileContent"></div>
+      
 
     </div>
     <!--end of search box-->
 
   </div>
+
   <!--end of main container-->
 </body>
 

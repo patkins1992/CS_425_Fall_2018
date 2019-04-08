@@ -162,3 +162,21 @@ padding: 5px;
 }
 
 
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+
+#results{
+    text-align:center;
+    display:inline-block;
+    margin-left:30%;
+    margin-bottom:2%;
+    font-size: 150%;
+    background-color: rgb(228, 228, 228);
+}
+
+
