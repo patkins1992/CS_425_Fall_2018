@@ -41,7 +41,7 @@ $DataEntry2 = 1;
       
     </form>
     <form class = "ShortAnswer">
-      <header class = "Short">Short Answer Questions <input type = "button" class = "button" value = "Edit" style = "border:2;" id = "ChangeLA"/> </header>     
+      <header class = "Short">Short Answer Questions </header>     
       <br><?php $query1 = mysqli_query($con,"SELECT `question1` FROM `surveyquestions` WHERE $DataEntry1 "); 
             if (mysqli_num_rows($query1) > 0) {
               // output data of each row
@@ -121,50 +121,121 @@ $DataEntry2 = 1;
                echo $row["question10"];
                       }
               }?><br>
-
-
+</form>
             <div id = "Change" class = "modal">
             <div class="modal-content">
             <span class="close">&times;</span>
             <form action = "" method = "post">
-            Question1: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
-            Question2: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
-            Question3: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
-            Question4: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
-            Question5: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
-            Question6: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
-            Question7: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
-            Question8: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
-            Question9: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
-            Question10: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
+            Short Answer Question 1: <br>
+            <input type = "text" class = "AdminEid" name = "LA1"/><br>
+            Short Answer Question 2: <br>
+            <input type = "text" class = "AdminEid" name = "LA2"/><br>
+            Short Answer Question 3: <br>
+            <input type = "text" class = "AdminEid" name = "LA3"/><br>
+            Short Answer Question 4: <br>
+            <input type = "text" class = "AdminEid" name = "LA4"/><br>
+            Short Answer Question 5: <br>
+            <input type = "text" class = "AdminEid" name = "LA5"/><br>
+            Short Answer Question 6: <br>
+            <input type = "text" class = "AdminEid" name = "LA6"/><br>
+            Short Answer Question 7: <br>
+            <input type = "text" class = "AdminEid" name = "LA7"/><br>
+            Short Answer Question 8: <br>
+            <input type = "text" class = "AdminEid" name = "LA8"/><br>
+            Short Answer Question 9: <br>
+            <input type = "text" class = "AdminEid" name = "LA9"/><br>
+            Short Answer Question 10: <br>
+            <input type = "text" class = "AdminEid" name = "LA10"/><br>
+            Radio Choice Question 1: <br>
+            <input type = "text" class = "AdminEid" name = "RC1"/><br>
+            Radio Choice Question 2: <br>
+            <input type = "text" class = "AdminEid" name = "RC2"/><br>
+            Radio Choice Question 3: <br>
+            <input type = "text" class = "AdminEid" name = "RC3"/><br>
+            Radio Choice Question 4: <br>
+            <input type = "text" class = "AdminEid" name = "RC4"/><br>
+            Radio Choice Question 5: <br>
+            <input type = "text" class = "AdminEid" name = "RC5"/><br>
+            Radio Choice Question 6: <br>
+            <input type = "text" class = "AdminEid" name = "RC6"/><br>
+            Radio Choice Question 7: <br>
+            <input type = "text" class = "AdminEid" name = "RC7"/><br>
+            Radio Choice Question 8: <br>
+            <input type = "text" class = "AdminEid" name = "RC8"/><br>
+            Radio Choice Question 9: <br>
+            <input type = "text" class = "AdminEid" name = "RC9"/><br>
+            Radio Choice Question 10: <br>
+            <input type = "text" class = "AdminEid" name = "RC10"/><br>
+            Radio Choice Question 11: <br>
+            <input type = "text" class = "AdminEid" name = "RC11"/><br>
+            Radio Choice Question 12: <br>
+            <input type = "text" class = "AdminEid" name = "RC12"/><br>
+            Radio Choice Question 13: <br>
+            <input type = "text" class = "AdminEid" name = "RC13"/><br>
+            Radio Choice Question 14: <br>
+            <input type = "text" class = "AdminEid" name = "RC14"/><br>
+            Radio Choice Question 15: <br>
+            <input type = "text" class = "AdminEid" name = "RC15"/><br>
+            Radio Choice Question 16: <br>
+            <input type = "text" class = "AdminEid" name = "RC16"/><br>
+            Radio Choice Question 17: <br>
+            <input type = "text" class = "AdminEid" name = "RC17"/><br>
+            Radio Choice Question 18: <br>
+            <input type = "text" class = "AdminEid" name = "RC18"/><br>
+            Radio Choice Question 19: <br>
+            <input type = "text" class = "AdminEid" name = "RC19"/><br>
+            Radio Choice Question 20: <br>
+            <input type = "text" class = "AdminEid" name = "RC20"/><br>
+            
+            <input type = "submit" class = "Save" name = "Save" value = "Save"/>
             </form>
             <?php
-            if(isset($_POST['submit'])){
+              if(isset($_POST['Save'])){
+                $LA1 = $_POST['LA1'];
+                $LA2 = $_POST['LA2'];
+                $LA3 = $_POST['LA3'];
+                $LA4 = $_POST['LA4'];
+                $LA5 = $_POST['LA5'];
+                $LA6 = $_POST['LA6'];
+                $LA7 = $_POST['LA7'];
+                $LA8 = $_POST['LA8'];
+                $LA9 = $_POST['LA9'];
+                $LA10 = $_POST['LA10'];
+                $RC1  = $_POST['RC1'];
+                $RC2  = $_POST['RC2'];
+                $RC3  = $_POST['RC3'];
+                $RC4  = $_POST['RC4'];
+                $RC5  = $_POST['RC5'];
+                $RC6  = $_POST['RC6'];
+                $RC7  = $_POST['RC7'];
+                $RC8  = $_POST['RC8'];
+                $RC9  = $_POST['RC9'];
+                $RC10 = $_POST['RC10'];
+                $RC11 = $_POST['RC11'];
+                $RC12 = $_POST['RC12'];
+                $RC13 = $_POST['RC13'];
+                $RC14 = $_POST['RC14'];
+                $RC15 = $_POST['RC15'];
+                $RC16 = $_POST['RC16'];
+                $RC17 = $_POST['RC17'];
+                $RC18 = $_POST['RC18'];
+                $RC19 = $_POST['RC19'];
+                $RC20 = $_POST['RC20'];
+                if($LA1 == ""){
+                  echo "<p> input not recieved </p>";
+                }else{
 
-               
-            
-            }
+                $Surveyinsert = "INSERT INTO `surveyquestions` (`id`, `question1`, `question2`, `question3`, `question4`, `question5`, `question6`, `question7`, `question8`, `question9`, `question10`, `rc1`, `rc2`, `rc3`, `rc4`, `rc5`, `rc6`, `rc7`, `rc8`, `rc9`, `rc10`, `rc11`, `rc12`, `rc13`, `rc14`, `rc15`, `rc16`, `rc17`, `rc18`, `rc19`, `rc20`) VALUES ('2','$LA1','$LA2','$LA3','$LA4','$LA5','$LA6','$LA7','$LA8','$LA9','$LA10','$RC1','$RC2','$RC3','$RC4','$RC5','$RC6','$RC7','$RC8','$RC9','$RC10','$RC11','$RC12','$RC13','$RC14','$RC15','$RC16','$RC17','$RC18','$RC19','$RC20')";
 
-
-
-            ?>
+                mysqli_query($con,$Surveyinsert);
+                }
+              }
+              ?>
             </div>
           </div>
-      
-  </form>
   <form class = "RadioButtons">
   
-  <br>  <header class = "Radio">Radion Button Questions  <input type = "submit" class = "button" value = "Edit" style = "border:2;" id = "RadioChoice" /> </header>     
+  <br>  <header class = "Radio">Radion Button Questions  </header>     
           <br><?php $query11 = mysqli_query($con,"SELECT `rc1` FROM `surveyquestions` WHERE $DataEntry2 "); 
             if (mysqli_num_rows($query11) > 0) {
               // output data of each row
@@ -326,70 +397,33 @@ $DataEntry2 = 1;
               }?><br>
           
       </form>
-      <div id = "ChangeRC" class = "modal">
-            <div class="modal-content">
-            <span class="close">&times;</span>
-            <form action = "" method = "post">
-            Question1: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
-            Question2: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
-            Question3: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
-            Question4: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
-            Question5: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
-            Question6: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
-            Question7: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
-            Question8: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
-            Question9: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
-            Question10: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
-            Question11: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
-            Question12: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
-            Question13: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
-            Question14: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
-            Question15: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
-            Question16: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
-            Question17: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
-            Question18: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
-            Question19: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
-            Question20: <br>
-            <input type = "text" class = "AdminEid" name = "NewEid"/><br>
-
-            </form>
-            <?php
-            if(isset($_POST['submit'])){
-
-               
-            
-            }
-
-
-
-            ?>
-            </div>
-          </div>
-      <input type="submit" class="button" value="Send" style="border:2;"/>
+    
+          <br><input type = "button" class = "button" value = "Edit" style = "border:2;" id = "ChangeLA"/>  <input type="submit" name= "Send" id = "Send" class="button" value="Send" style="border:2;"/>
     </div>
     <!--end of search box-->
 
 
   </div>
+  <div id = "SendEmail" class = "modal">
+            <div class="modal-content">
+            <span class="close2">&times;</span>
+            <form action = "" method = "post">
+            Supervisor Email:<br>
+            <input type = "text" class = "SupEmail" name = "SupEmail"/><br>
+            Subject:<br>
+            <input type = "text" class = "SupSubject" name = "SupSubject"/><br>
+             Email: <br>
+            <textarea id = "myTextArea" rows = "3" cols = "80" name = "EmailBody"></textarea><br>
+            
+            
+            <input type = "checkbox" class = "SaveSup" name = "SaveSup"/> Save Supervisor<br>
+            <input type = "submit" class = "SendEmail" name = "SendEmail" value = "Send Email"/>
+            
+
+    
+            </form>
+            </div>
+          </div>
   <script>
         
         var modal = document.getElementById('Change');
@@ -418,6 +452,80 @@ $DataEntry2 = 1;
     }
 
         </script>
-  <!--end of main container-->
+        <script>
+        
+        var modal2 = document.getElementById('SendEmail');
+
+
+        var btn2 = document.getElementById("Send");
+
+
+        var span2 = document.getElementsByClassName("close2")[0];
+
+ 
+        btn2.onclick = function() {
+        modal2.style.display = "block";
+        }   
+
+
+        span2.onclick = function() {
+        modal2.style.display = "none";
+        }
+
+
+        window2.onclick = function(event2) {
+        if (event2.target == modal) {
+        modal2.style.display = "none";
+        }
+    }
+
+        </script>
+
   </body>
 </html>
+
+<?php 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '../phpmailer/PHPMailer-master/src/Exception.php';
+require '../phpmailer/PHPMailer-master/src/PHPMailer.php';
+require '../phpmailer/PHPMailer-master/src/SMTP.php';
+$reciverEmail = '';
+
+if(isset($_POST['SendEmail'])){
+  $reciverEmail = $_POST['SupEmail'];
+  $recieverSubject = $_POST['SupSubject'];
+  $recieverBody = $_POST['EmailBody'];
+  if($reciverEmail == ""){
+    echo "<p> no input for supervisor email </p>";
+  }else{
+$mail = new PHPMailer;
+$mail->isSMTP(); 
+$mail->SMTPDebug = 2; // 0 = off (for production use) - 1 = client messages - 2 = client and server messages
+$mail->Host = "smtp.gmail.com"; // use $mail->Host = gethostbyname('smtp.gmail.com'); // if your network does not support SMTP over IPv6
+$mail->Port = 587; // TLS only
+$mail->SMTPSecure = 'tls'; // ssl is depracated
+$mail->SMTPAuth = true;
+$mail->Username = "soulichigo95@gmail.com";
+$mail->Password = "bviqqnefxqnasmjq";
+$mail->setFrom("soulichigo95@gmail.com", "Matthew Morton");
+$mail->addAddress($reciverEmail, "Matthew Morton");
+$mail->Subject = $recieverSubject;
+$mail->Body = $recieverBody . "      http://localhost/CS_425_Fall_2018/html/supervisor_survey.html";
+
+ //$mail->msgHTML(file_get_contnts('contents.html'), __DIR__); //Read an HTML message body from an external file, convert referenced images to embedded,
+  }
+// $mail->addAttachment('images/phpmailer_mini.png'); //Attach an image file
+
+if(!$mail->send()){
+    echo "Mailer Error: " . $mail->ErrorInfo;
+}else{
+    echo "Message sent!";
+}
+}
+
+
+
+
+?>
