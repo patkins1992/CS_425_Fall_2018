@@ -94,6 +94,7 @@ $con = mysqli_connect("localhost","root" ,"","iopracticum");
       <!-- will display search results -->
       <div id="results">Information will be displayed here</div>
       <div id="fileContent"></div>
+      <a href="/reports/Ameren_bill_2018.pdf" target="_blank" class="button">Read more</a>
       
 
     </div>

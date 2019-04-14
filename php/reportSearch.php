@@ -65,7 +65,7 @@ if (mysqli_num_rows($result) > 0) {
       echo "<td>" . $str_arr[1] ."</td>";
       echo "<td>" . $row["company"] . "</td>";
       echo "<td>" . $row["year"] . "</td>";
-      echo'<td><button type=button class="button" onclick="displayRes(\''.$row['filepath'].'\')">view</button></td>';
+      echo'<td><a href="'.$string.'" target="_blank" class="button">view</a></td>';
       echo "</tr>";
     }
   } 
