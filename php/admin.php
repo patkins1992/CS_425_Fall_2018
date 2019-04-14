@@ -91,6 +91,11 @@ $con = mysqli_connect("localhost","root" ,"","iopracticum");
     
       </form>
       
+      <!-- will display search results -->
+      <div id="results"></div>
+      
+      
+
     </div>
     <!--end of search box-->
 
