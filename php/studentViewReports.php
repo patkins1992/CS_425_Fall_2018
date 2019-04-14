@@ -29,7 +29,7 @@
     <nav class="navbar">
       <ul>
         <li><a class="active" href="#Home">Home</a></li>
-        <li><a href= "./HomeScreen.html">Logout</a></li>
+        <li><a href= "../html/HomeScreen.html">Logout</a></li>
       </ul>
     </nav>
     <!--end of navbar-->
