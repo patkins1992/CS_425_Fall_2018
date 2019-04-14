@@ -179,6 +179,15 @@ th,td {
     background-color: rgb(228, 228, 228);
 }
 
-
+#results_tab1{
+    text-align:center;
+    display:inline-block;
+    margin-left:30%;
+    margin-bottom:2%;
+    margin-top:2%;
+    font-size: 150%;
+    background-color: rgb(228, 228, 228);
+}
+}
 
 

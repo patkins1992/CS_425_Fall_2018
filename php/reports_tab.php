@@ -62,7 +62,7 @@ $con = mysqli_connect("localhost","root" ,"","iopracticum");
 
 
 <!-- results of search for current year -->
-      <div id="results">
+      <div id="results_tab1">
           <?php  
           $result = mysqli_query($con,'SELECT * FROM report WHERE year = "'.date("Y").'"'); 
 
