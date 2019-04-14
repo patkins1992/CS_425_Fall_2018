@@ -27,10 +27,10 @@ $DataEntry2 = 1;
     <!-- navbar that stays at the top at all times -->
     <nav class="navbar">
       <ul>
-        <li><a   href="../php/admin.php">Home</a></li>
+        <li><a   href="admin.php">Home</a></li>
         <li><a  href="./companies.html">Companies</a></li>             
-        <li><a class="active" href="./admin_surveys.html">Supervisor Survey</a></li>
-        <li><a  href="../php/AccountDetails.php">Account Details</a></li>
+        <li><a class="active" href="admin_survey.php">Supervisor Survey</a></li>
+        <li><a  href="AccountDetails.php">Account Details</a></li>
         <li><a href="#Manual">Administrator Manual</a></li>
         <li><a href="./HomeScreen.html">Logout</a></li>
       </ul>

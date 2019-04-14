@@ -22,18 +22,18 @@ $con = mysqli_connect("127.0.0.1","root" ,"","iopracticum");
             <img class="siue_logo" src="../images/SIUE-Logo-RED.jpg">
         </header>
 
-        <!-- navbar that stays at the top at all times -->
-        <nav class="navbar">
-            <ul>
-                <li><a href="../html/admin.html">Home</a></li>
-                <li><a href="../html/companies.html">Companies</a></li>
-                <li><a href="../html/admin_surveys.html">Supervisor Survey</a></li>
-                <li><a class="active" href="./account_detail.html">Account Details</a></li>
-                <li><a href="#Manual">Administrator Manual</a></li>
-                <li><a href="../html/HomeScreen.html">Logout</a></li>
-            </ul>
-        </nav>
-        <!--end of navbar-->
+       <!-- navbar that stays at the top at all times -->
+    <nav class="navbar">
+      <ul>
+        <li><a href="admin.php">Home</a></li>
+        <li><a href="companies.php">Companies</a></li>             <!-- Phil added navigation to companies  -->
+        <li><a href="admin_survey.php">Supervisor Survey</a></li>
+        <li><a class="active" href="AccountDetails.php">Account Details</a></li>
+        <li><a href="#Manual">Administrator Manual</a></li>
+        <li><a href="../html/HomeScreen.html">Logout</a></li>
+      </ul>
+    </nav>
+    <!--end of navbar-->
 
         <!-- Account info div -->
         <div class="account_info">

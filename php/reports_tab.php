@@ -1,7 +1,8 @@
 <!--
     Coder: Preston Whittaker
- Modified: 3/21/2019 by Steven Perry
-     Page: admin login 
+  created: 2/9/2019
+ Modified: 4/13/2019
+     Page: admin login -reports tab
 -->
 
 <?php
@@ -18,9 +19,6 @@ $con = mysqli_connect("localhost","root" ,"","iopracticum");
   <meta charset="UTF-8">
   <title>Admin login</title>
   <link rel="stylesheet" type="text/css" href="../css/theme.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" src="../js/reportSearch.js"></script>
-  
 </head>
 
 <body>
@@ -36,6 +34,7 @@ $con = mysqli_connect("localhost","root" ,"","iopracticum");
 
     </header>
 
+    
     <!-- navbar that stays at the top at all times -->
     <nav class="navbar">
       <ul>
@@ -54,48 +53,54 @@ $con = mysqli_connect("localhost","root" ,"","iopracticum");
 
       <div class="sub_nav">
         <ul>
-          <li><a class="active" href="admin.php"> Search Reports</a></li>
-          <li><a href="reports_tab.php"> Reports</a></li>
+          <li><a  href="admin.php">Search Reports</a></li>
+          <li><a  class="active" href="reports_tab.php"> Reports</a></li>
           <li><a href="surveys_tab.php"> Surveys</a></li>
           <li><a href="view_all_surveys_tab.php"> View all surveys</a></li>
         </ul>
       </div>
 
-      <form class="dropbox"  >
-        <label for="option">By Company: </label>
-        <select class="option" id="company">
-        <option value="allCompanys">All</option>
-          <?php  $query = mysqli_query($con,"SELECT name FROM location"); 
-          if (mysqli_num_rows($query) > 0) {
-            // output data of each company name
-            while($row = mysqli_fetch_assoc($query)) {
-              echo '<option value="' . $row["name"] . '">' . $row["name"] . '</option>';
-            }
-          } 
-          mysqli_close($con);
-          ?>  
-        </select>
 
-        <label for="option">By Year: </label>
-        <select class="option" id="date">
-          <option value="allYears">All</option>
-          <option value="2019">2019</option>
-          <option value="2018">2018</option>
-          <option value="2017">2017</option>
-          <option value="2016">2016</option>
-          <option value="2015">2015</option>
-          <option value="2014">2014</option>
-        </select>
+<!-- results of search for current year -->
+      <div id="results">
+          <?php  
+          $result = mysqli_query($con,'SELECT * FROM report WHERE year = "'.date("Y").'"'); 
 
-        <button type="button" class="button" value="Search" style="border:2;" onclick="reportSearch()">Search</button>
-    
-      </form>
+          //echo results table
+echo "<table>
+<tr>
+<th>Name</th>
+<th>Company</th>
+<th>Year</th>
+</tr>";
+
+//loop through results
+if (mysqli_num_rows($result) > 0) {
+    // output data of search results
+    while($row = mysqli_fetch_assoc($result)) {
+        
+     // use of explode to extract name from file path 
+     $string = $row["filepath"];
+     $str_arr = explode ("_", $string);  
       
+      
+      echo "<tr>";
+      echo "<td>" . $str_arr[1] ."</td>";
+      echo "<td>" . $row["company"] . "</td>";
+      echo "<td>" . $row["year"] . "</td>";
+      echo'<td><a href="'.$string.'" target="_blank" class="button">view</a></td>';
+      echo "</tr>";
+    }
+  } 
+echo "</table>";
+mysqli_close($con);
+          ?>    
+      </div>
+
     </div>
     <!--end of search box-->
 
   </div>
-
   <!--end of main container-->
 </body>
 

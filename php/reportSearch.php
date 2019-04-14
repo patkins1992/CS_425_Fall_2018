@@ -60,7 +60,7 @@ if (mysqli_num_rows($result) > 0) {
      $string = $row["filepath"];
      $str_arr = explode ("_", $string);  
       
-        
+      
       echo "<tr>";
       echo "<td>" . $str_arr[1] ."</td>";
       echo "<td>" . $row["company"] . "</td>";
