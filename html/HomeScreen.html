@@ -1,0 +1,97 @@
+<!--
+    Coder: Matthew Morton
+ Modified: 1/14/2019
+     Page: homescreen
+-->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Student page</title>
+    <link rel="stylesheet" type="text/css" href="../css/homescreen.css">
+  </head>
+  <body>
+    <!--main container for the whole page-->
+  <div class="container">
+    <header class="head">
+      <img class="io_img" src="../images/header_logo.jpg">
+      <img class="siue_faculty" src="../images/IO-faculty-students-April-2018.jpg">
+      <h1 class="io_h1">I/O Practicum Program</h1>
+      <img class="siue_logo" src="../images/SIUE-Logo-RED.jpg">
+      
+      
+     
+    </header>
+
+    <!-- navbar that stays at the top at all times -->
+    <nav class="navbar">
+      <ul>
+        <li><a  class="active" href="HomeScreen.html">Home</a></li>
+        <li><a  href="Temporary-Login.html">Login</a></li>
+        <li><a href = "../php/ContactUs.php"> Contact Us </a></li>
+      </ul>
+    </nav>
+    <!--end of navbar-->
+
+    <!--Information-->
+    <div class = "Student_Information">
+        <ul class = "Information">
+            <!-- Student Information -->
+        <li class = "Information_Title">Current SIUE I/O Master's Program Students</li>
+        <li>Welcome to the Practicum Page.  From here you will be able to submit your mid-term 
+            (100 Hour) and final (200 Hour) reports as well as review past reports from previous 
+            students' practicums.</li>
+            <!-- General Information -->
+        <li class = "Information_Title">Industrial/Organizational Psychology Master's Degree</li>
+        <li>Our program is designed to provide students with the knowledge and skills required to 
+            analyze, understand,and solve a wide variety of problems which occur in organizations. 
+            The scientist-practitioner model is the basis of the program, preparing students for 
+            future employment in industry as well as further education at the doctoral level. 
+            The curriculum includes extensive training in quantitative methods, behavioral 
+            measurement and theory, research, and practice. Research experience is directed at 
+            conceptualizing and solving applied organizational problems. Required practica are 
+            oriented towards giving students applied, realistic skills and expectations to create 
+            effective performance in an organizational environment.</li>
+      </ul>
+    </div>
+  <!--End of Information-->
+
+    <!--Psycology Facebook-->
+    <div class = "facebook">
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId={APP_ID}";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-page" 
+     data-href="https://www.facebook.com/SIUeIOMasters" 
+     data-tabs="timeline" 
+     data-small-header="false" 
+     data-adapt-container-width="true" 
+     data-hide-cover="false" 
+     data-show-facepile="true">
+  <div class="fb-xfbml-parse-ignore">
+    <blockquote cite="https://www.facebook.com/SIUeIOMasters/">
+      <a href="https://www.facebook.com/SIUeIOMasters/">Facebook</a>
+    </blockquote>
+  </div>
+</div>
+</div>
+    <!--End of Psycology Facebook-->
+
+<!--Psycology Video-->
+<div class = "video">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/j5NfzF-b3K4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<!--End of Psycology Video-->
+
+  </div>
+  <!--end of main container-->
+  </body>
+</html>
