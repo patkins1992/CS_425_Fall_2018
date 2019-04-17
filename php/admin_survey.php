@@ -1,7 +1,22 @@
 <?php
 $con = mysqli_connect("127.0.0.1","root" ,"","iopracticum");
+$DataEntry = "SELECT `id` FROM `surveyquestions`";
+$result = mysqli_query($con,$DataEntry);
+
+if ($result->num_rows > 0) {
+  // output data of eah row
+  while($row = mysqli_fetch_assoc($result)){
+  $select = $row['id'];
+  
+  }
+ 
+} else {
+  
+  echo "0 results";
+}
 $DataEntry1 = 1;
-$DataEntry2 = 1;
+ 
+ 
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +57,7 @@ $DataEntry2 = 1;
     </form>
     <form class = "ShortAnswer">
       <header class = "Short">Short Answer Questions </header>     
-      <br><?php $query1 = mysqli_query($con,"SELECT `question1` FROM `surveyquestions` WHERE $DataEntry1 "); 
+      <br><?php $query1 = mysqli_query($con,"SELECT `question1` FROM `surveyquestions` ORDER BY `id` DESC LIMIT 1"); 
             if (mysqli_num_rows($query1) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query1)) {
@@ -50,7 +65,7 @@ $DataEntry2 = 1;
                       }
               }?> <br>
      
-      <br><?php $query2 = mysqli_query($con,"SELECT `question2` FROM `surveyquestions` WHERE $DataEntry1 "); 
+      <br><?php $query2 = mysqli_query($con,"SELECT `question2` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query2) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query2)) {
@@ -58,7 +73,7 @@ $DataEntry2 = 1;
                       }
               }?><br>
       
-      <br><?php $query3 = mysqli_query($con,"SELECT `question3` FROM `surveyquestions` WHERE $DataEntry1 "); 
+      <br><?php $query3 = mysqli_query($con,"SELECT `question3` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query3) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query3)) {
@@ -66,7 +81,7 @@ $DataEntry2 = 1;
                       }
               }?><br>
       
-      <br><?php $query4 = mysqli_query($con,"SELECT `question4` FROM `surveyquestions` WHERE $DataEntry1 "); 
+      <br><?php $query4 = mysqli_query($con,"SELECT `question4` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query4) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query4)) {
@@ -74,7 +89,7 @@ $DataEntry2 = 1;
                       }
               }?><br>
       
-      <br> <?php $query5 = mysqli_query($con,"SELECT `question5` FROM `surveyquestions` WHERE $DataEntry1 "); 
+      <br> <?php $query5 = mysqli_query($con,"SELECT `question5` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query5) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query5)) {
@@ -82,7 +97,7 @@ $DataEntry2 = 1;
                       }
               }?><br>
       
-      <br> <?php $query6 = mysqli_query($con,"SELECT `question6` FROM `surveyquestions` WHERE $DataEntry1 "); 
+      <br> <?php $query6 = mysqli_query($con,"SELECT `question6` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query6) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query6)) {
@@ -90,7 +105,7 @@ $DataEntry2 = 1;
                       }
               }?><br>
      
-      <br><?php $query7 = mysqli_query($con,"SELECT `question7` FROM `surveyquestions` WHERE $DataEntry1 "); 
+      <br><?php $query7 = mysqli_query($con,"SELECT `question7` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query7) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query7)) {
@@ -98,7 +113,7 @@ $DataEntry2 = 1;
                       }
               }?><br>
       
-      <br><?php $query8 = mysqli_query($con,"SELECT `question8` FROM `surveyquestions` WHERE $DataEntry1 "); 
+      <br><?php $query8 = mysqli_query($con,"SELECT `question8` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query8) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query8)) {
@@ -106,7 +121,7 @@ $DataEntry2 = 1;
                       }
               }?><br>
       
-      <br><?php $query9 = mysqli_query($con,"SELECT `question9` FROM `surveyquestions` WHERE $DataEntry1 "); 
+      <br><?php $query9 = mysqli_query($con,"SELECT `question9` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query9) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query9)) {
@@ -114,7 +129,7 @@ $DataEntry2 = 1;
                       }
               }?><br>
       
-      <br> <?php $query10 = mysqli_query($con,"SELECT `question10` FROM `surveyquestions` WHERE $DataEntry1 "); 
+      <br> <?php $query10 = mysqli_query($con,"SELECT `question10` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query10) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query10)) {
@@ -221,11 +236,12 @@ $DataEntry2 = 1;
                 $RC18 = $_POST['RC18'];
                 $RC19 = $_POST['RC19'];
                 $RC20 = $_POST['RC20'];
+                $select = $select + 1;
                 if($LA1 == ""){
                   echo "<p> input not recieved </p>";
                 }else{
 
-                $Surveyinsert = "INSERT INTO `surveyquestions` (`id`, `question1`, `question2`, `question3`, `question4`, `question5`, `question6`, `question7`, `question8`, `question9`, `question10`, `rc1`, `rc2`, `rc3`, `rc4`, `rc5`, `rc6`, `rc7`, `rc8`, `rc9`, `rc10`, `rc11`, `rc12`, `rc13`, `rc14`, `rc15`, `rc16`, `rc17`, `rc18`, `rc19`, `rc20`) VALUES ('2','$LA1','$LA2','$LA3','$LA4','$LA5','$LA6','$LA7','$LA8','$LA9','$LA10','$RC1','$RC2','$RC3','$RC4','$RC5','$RC6','$RC7','$RC8','$RC9','$RC10','$RC11','$RC12','$RC13','$RC14','$RC15','$RC16','$RC17','$RC18','$RC19','$RC20')";
+                $Surveyinsert = "INSERT INTO `surveyquestions` (`id`, `question1`, `question2`, `question3`, `question4`, `question5`, `question6`, `question7`, `question8`, `question9`, `question10`, `rc1`, `rc2`, `rc3`, `rc4`, `rc5`, `rc6`, `rc7`, `rc8`, `rc9`, `rc10`, `rc11`, `rc12`, `rc13`, `rc14`, `rc15`, `rc16`, `rc17`, `rc18`, `rc19`, `rc20`) VALUES ('$select','$LA1','$LA2','$LA3','$LA4','$LA5','$LA6','$LA7','$LA8','$LA9','$LA10','$RC1','$RC2','$RC3','$RC4','$RC5','$RC6','$RC7','$RC8','$RC9','$RC10','$RC11','$RC12','$RC13','$RC14','$RC15','$RC16','$RC17','$RC18','$RC19','$RC20')";
 
                 mysqli_query($con,$Surveyinsert);
                 }
@@ -236,7 +252,7 @@ $DataEntry2 = 1;
   <form class = "RadioButtons">
   
   <br>  <header class = "Radio">Radion Button Questions  </header>     
-          <br><?php $query11 = mysqli_query($con,"SELECT `rc1` FROM `surveyquestions` WHERE $DataEntry2 "); 
+          <br><?php $query11 = mysqli_query($con,"SELECT `rc1` FROM `surveyquestions`   ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query11) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query11)) {
@@ -244,7 +260,7 @@ $DataEntry2 = 1;
                       }
               }?><br>
          
-          <br><?php $query12 = mysqli_query($con,"SELECT `rc2` FROM `surveyquestions` WHERE $DataEntry2 "); 
+          <br><?php $query12 = mysqli_query($con,"SELECT `rc2` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query12) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query12)) {
@@ -252,7 +268,7 @@ $DataEntry2 = 1;
                       }
               }?><br>
            
-          <br><?php $query13 = mysqli_query($con,"SELECT `rc3` FROM `surveyquestions` WHERE $DataEntry2 "); 
+          <br><?php $query13 = mysqli_query($con,"SELECT `rc3` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query13) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query13)) {
@@ -260,7 +276,7 @@ $DataEntry2 = 1;
                       }
               }?><br>
           
-          <br><?php $query14 = mysqli_query($con,"SELECT `rc4` FROM `surveyquestions` WHERE $DataEntry2 "); 
+          <br><?php $query14 = mysqli_query($con,"SELECT `rc4` FROM `surveyquestions` ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query14) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query14)) {
@@ -268,7 +284,7 @@ $DataEntry2 = 1;
                       }
               }?><br>
             
-          <br><?php $query15 = mysqli_query($con,"SELECT `rc5` FROM `surveyquestions` WHERE $DataEntry2 "); 
+          <br><?php $query15 = mysqli_query($con,"SELECT `rc5` FROM `surveyquestions` ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query15) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query15)) {
@@ -276,7 +292,7 @@ $DataEntry2 = 1;
                       }
               }?><br>
          
-          <br><?php $query16 = mysqli_query($con,"SELECT `rc6` FROM `surveyquestions` WHERE $DataEntry2 "); 
+          <br><?php $query16 = mysqli_query($con,"SELECT `rc6` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query16) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query16)) {
@@ -284,7 +300,7 @@ $DataEntry2 = 1;
                       }
               }?><br>
         
-          <br><?php $query17 = mysqli_query($con,"SELECT `rc7` FROM `surveyquestions` WHERE $DataEntry2 "); 
+          <br><?php $query17 = mysqli_query($con,"SELECT `rc7` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query17) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query17)) {
@@ -292,7 +308,7 @@ $DataEntry2 = 1;
                       }
               }?><br>
        
-          <br><?php $query18 = mysqli_query($con,"SELECT `rc8` FROM `surveyquestions` WHERE $DataEntry2 "); 
+          <br><?php $query18 = mysqli_query($con,"SELECT `rc8` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query18) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query18)) {
@@ -300,7 +316,7 @@ $DataEntry2 = 1;
                       }
               }?><br>
          
-          <br><?php $query19 = mysqli_query($con,"SELECT `rc9` FROM `surveyquestions` WHERE $DataEntry2 "); 
+          <br><?php $query19 = mysqli_query($con,"SELECT `rc9` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query19) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query19)) {
@@ -308,7 +324,7 @@ $DataEntry2 = 1;
                       }
               }?><br>
          
-          <br><?php $query20 = mysqli_query($con,"SELECT `rc10` FROM `surveyquestions` WHERE $DataEntry2 "); 
+          <br><?php $query20 = mysqli_query($con,"SELECT `rc10` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query20) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query20)) {
@@ -316,7 +332,7 @@ $DataEntry2 = 1;
                       }
               }?><br>
       
-          <br><?php $query21 = mysqli_query($con,"SELECT `rc11` FROM `surveyquestions` WHERE $DataEntry2 "); 
+          <br><?php $query21 = mysqli_query($con,"SELECT `rc11` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query21) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query21)) {
@@ -324,7 +340,7 @@ $DataEntry2 = 1;
                       }
               }?><br>
            
-          <br><?php $query22 = mysqli_query($con,"SELECT `rc12` FROM `surveyquestions` WHERE $DataEntry2 "); 
+          <br><?php $query22 = mysqli_query($con,"SELECT `rc12` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query22) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query22)) {
@@ -332,7 +348,7 @@ $DataEntry2 = 1;
                       }
               }?><br>
           
-          <br><?php $query23 = mysqli_query($con,"SELECT `rc13` FROM `surveyquestions` WHERE $DataEntry2 "); 
+          <br><?php $query23 = mysqli_query($con,"SELECT `rc13` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query23) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query23)) {
@@ -340,7 +356,7 @@ $DataEntry2 = 1;
                       }
               }?><br>
            
-          <br><?php $query24 = mysqli_query($con,"SELECT `rc14` FROM `surveyquestions` WHERE $DataEntry2 "); 
+          <br><?php $query24 = mysqli_query($con,"SELECT `rc14` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query24) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query24)) {
@@ -348,7 +364,7 @@ $DataEntry2 = 1;
                       }
               }?><br>
        
-          <br><?php $query25 = mysqli_query($con,"SELECT `rc15` FROM `surveyquestions` WHERE $DataEntry2 "); 
+          <br><?php $query25 = mysqli_query($con,"SELECT `rc15` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query25) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query25)) {
@@ -356,7 +372,7 @@ $DataEntry2 = 1;
                       }
               }?><br>
              
-          <br><?php $query26 = mysqli_query($con,"SELECT `rc16` FROM `surveyquestions` WHERE $DataEntry2 "); 
+          <br><?php $query26 = mysqli_query($con,"SELECT `rc16` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query26) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query26)) {
@@ -364,7 +380,7 @@ $DataEntry2 = 1;
                       }
               }?><br>
 
-          <br><?php $query27 = mysqli_query($con,"SELECT `rc17` FROM `surveyquestions` WHERE $DataEntry2 "); 
+          <br><?php $query27 = mysqli_query($con,"SELECT `rc17` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query27) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query27)) {
@@ -372,7 +388,7 @@ $DataEntry2 = 1;
                       }
               }?><br>
          
-          <br><?php $query28 = mysqli_query($con,"SELECT `rc18` FROM `surveyquestions` WHERE $DataEntry2 "); 
+          <br><?php $query28 = mysqli_query($con,"SELECT `rc18` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query28) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query28)) {
@@ -380,7 +396,7 @@ $DataEntry2 = 1;
                       }
               }?><br> 
          
-          <br><?php $query29 = mysqli_query($con,"SELECT `rc19` FROM `surveyquestions` WHERE $DataEntry2 "); 
+          <br><?php $query29 = mysqli_query($con,"SELECT `rc19` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query29) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query29)) {
@@ -388,7 +404,7 @@ $DataEntry2 = 1;
                       }
               }?><br>
    
-          <br><?php $query30 = mysqli_query($con,"SELECT `rc20` FROM `surveyquestions` WHERE $DataEntry2 "); 
+          <br><?php $query30 = mysqli_query($con,"SELECT `rc20` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query30) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query30)) {
@@ -502,7 +518,7 @@ if(isset($_POST['SendEmail'])){
   }else{
 $mail = new PHPMailer;
 $mail->isSMTP(); 
-$mail->SMTPDebug = 2; // 0 = off (for production use) - 1 = client messages - 2 = client and server messages
+$mail->SMTPDebug = 0; // 0 = off (for production use) - 1 = client messages - 2 = client and server messages
 $mail->Host = "smtp.gmail.com"; // use $mail->Host = gethostbyname('smtp.gmail.com'); // if your network does not support SMTP over IPv6
 $mail->Port = 587; // TLS only
 $mail->SMTPSecure = 'tls'; // ssl is depracated
@@ -512,7 +528,7 @@ $mail->Password = "bviqqnefxqnasmjq";
 $mail->setFrom("soulichigo95@gmail.com", "Matthew Morton");
 $mail->addAddress($reciverEmail, "Matthew Morton");
 $mail->Subject = $recieverSubject;
-$mail->Body = $recieverBody . "      http://localhost/CS_425_Fall_2018/html/supervisor_survey.html";
+$mail->Body = $recieverBody . "      http://localhost/CS_425_Fall_2018/php/SupervisorSurvey.php?QuestionId=$select";
 
  //$mail->msgHTML(file_get_contnts('contents.html'), __DIR__); //Read an HTML message body from an external file, convert referenced images to embedded,
   }
