@@ -40,7 +40,7 @@ $con = mysqli_connect("localhost","root" ,"","iopracticum");
     <nav class="navbar">
       <ul>
         <li><a  class="active" href="admin.php">Home</a></li>
-        <li><a href="#companies">Companies</a></li>             <!-- Phil added navigation to companies  -->
+        <li><a href="../html/companies.html">Companies</a></li>             <!-- Phil added navigation to companies  -->
         <li><a href="admin_survey.php">Supervisor Survey</a></li>
         <li><a href="AccountDetails.php">Account Details</a></li>
         <li><a href="#Manual">Administrator Manual</a></li>

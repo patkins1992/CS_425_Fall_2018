@@ -26,7 +26,7 @@ $con = mysqli_connect("127.0.0.1","root" ,"","iopracticum");
     <nav class="navbar">
       <ul>
         <li><a href="admin.php">Home</a></li>
-        <li><a href="companies.php">Companies</a></li>             <!-- Phil added navigation to companies  -->
+        <li><a href="../html/companies.html">Companies</a></li>             <!-- Phil added navigation to companies  -->
         <li><a href="admin_survey.php">Supervisor Survey</a></li>
         <li><a class="active" href="AccountDetails.php">Account Details</a></li>
         <li><a href="#Manual">Administrator Manual</a></li>
