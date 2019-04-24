@@ -1,8 +1,20 @@
-<!--
-    Coder: Matthew Morton
- Modified: 1/5/2019
-     Page: student-Your Reports
--->
+<?php 
+$con = mysqli_connect("127.0.0.1","root" ,"","iopracticum");
+$DataEntry = "SELECT `id` FROM `report`";
+$result = mysqli_query($con,$DataEntry);
+
+if ($result->num_rows > 0) {
+  // output data of eah row
+  while($row = mysqli_fetch_assoc($result)){
+  $select = $row['id'];
+  
+  }
+ 
+} else {
+  
+  echo "0 results";
+}
+?>
 
 
 <!DOCTYPE html>
@@ -28,7 +40,7 @@
     <!-- navbar that stays at the top at all times -->
     <nav class="navbar">
       <ul>
-        <li><a class="active" href="#Home">Home</a></li>
+        <li><a class="active" href="../php/student.php">Home</a></li>
         <li><a href= "../html/HomeScreen.html">Logout</a></li>
       </ul>
     </nav>
@@ -44,22 +56,68 @@
         <li><a class = "active" href="studentAddReports.php">Add Report</a></li>
       </ul>
     </div>
-    <div class ="AddReports">
+    <div class ="AddReports" >
           <div class = "DropBox">
-            <img class = "folder-pic" src = "../images/sub-folder-clipart-1.jpg">
-            <a>Add your reports you would like to upload</a>
+            <form method = 'POST' action = "" enctype = "multipart/form-data">
+          Company:<br>
+            <input type = "text" class = "AdminEid" name = "StudentCompany"/><br>
+            First and Last Name:<br>
+            <input type ="text" class = "AdminName" name = "StudentName"/><br>
+            Current Year:<br>
+            <input type ="text" class = "AdminEmail" name = "CurrentYear"/><br>
+            Midterm or Final:<br>
+            <input type = "text" class = "Final" name = "SemsterChoice"/><br>
+            <input type = "file" id = "myfile" name = "myfile"  accept = "application/pdf"/>
+            <input name = "submit" type = "submit" Value = "Add"/>
+
+          </form>
+            <?php
+            if(isset($_FILES["myfile"])){
+              $name = $_FILES["myfile"]["name"];
+              $tmp_name = $_FILES['myfile']['tmp_name'];
+              $error = $_FILES['myfile']['error'];
+              $type = $_FILES['myfile']['type'];
+              
+              echo "$name" . "$tmp_name". "$type";
+
+              if(isset($_POST["submit"])){
+              $target = "../reports/";
+              $allowedExt = "pdf";
+              $targetGo = $target.$name;
+              $Company = $_POST["StudentCompany"];
+              $StudentName = $_POST["StudentName"];
+              $Year = $_POST["CurrentYear"];
+              $Choice = $_POST["SemsterChoice"];
+              $Id = $select + 1;
+              $newfileName = $Company . "_". $StudentName ."_". $Year; 
+              move_uploaded_file($_FILES["myfile"]["tmp_name"],$target.$newfileName.".pdf"); 
+
+
+              $insert = "INSERT INTO `report` (`id`, `filepath`, `final`, `company`, `year`) VALUES ('$Id', '../reports/$newfileName',NULL, '$Company', '$Year')";
+              mysqli_query($con,$insert);
+            }
+          }
+            ?>
 
           </div>
-          <form method = "post" enctype = "multipart/form-data">
-          <!--opens file explorer for only for pdfs-->
-          <input type = "file" name = "myfile" accept = "application/pdf"/>
-          <button name = "Select"> Add </button> <!--is used in test.php to upload files-->
-          </form>
+         
         <form>
 
         </form>
     </div>
    
+            <?php
+           
+            
+            
+
+
+
+            
+
+
+            ?>
+            
     
     <!--end of search box-->
 
@@ -67,3 +125,41 @@
   <!--end of main container-->
   </body>
 </html>
+
+
+<?php
+
+
+?>
+
+<script>
+        
+        var modal = document.getElementById('AddReport');
+
+
+        var btn = document.getElementById("Select");
+
+
+        var span = document.getElementsByClassName("close")[0];
+
+ 
+        btn.onclick = function() {
+        modal.style.display = "block";
+        }   
+
+
+        span.onclick = function() {
+        modal.style.display = "none";
+        }
+
+
+        window.onclick = function(event) {
+        if (event.target == modal) {
+        modal.style.display = "none";
+        }
+    }
+
+        </script>
+
+
+
