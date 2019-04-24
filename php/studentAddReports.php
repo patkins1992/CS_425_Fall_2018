@@ -89,8 +89,8 @@ if ($result->num_rows > 0) {
               $Year = $_POST["CurrentYear"];
               $Choice = $_POST["SemsterChoice"];
               $Id = $select + 1;
-              $newfileName = $Company . "_". $StudentName ."_". $Year; 
-              move_uploaded_file($_FILES["myfile"]["tmp_name"],$target.$newfileName.".pdf"); 
+              $newfileName = $Company . "_". $StudentName ."_". $Year.".pdf"; 
+              move_uploaded_file($_FILES["myfile"]["tmp_name"],$target.$newfileName); 
 
 
               $insert = "INSERT INTO `report` (`id`, `filepath`, `final`, `company`, `year`) VALUES ('$Id', '../reports/$newfileName',NULL, '$Company', '$Year')";
