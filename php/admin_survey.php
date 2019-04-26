@@ -65,77 +65,114 @@ $DataEntry1 = 1;
                       }
               }?> <br>
      
-      <br><?php $query2 = mysqli_query($con,"SELECT `question2` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
+      <?php $query2 = mysqli_query($con,"SELECT `question2` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query2) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query2)) {
-               echo $row["question2"];
+                if($row["question2"] == ""){
+
+                }else {
+                  echo "<br>".$row["question2"]."<br>";
+                }
+                
                       }
-              }?><br>
+              }?>
       
-      <br><?php $query3 = mysqli_query($con,"SELECT `question3` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
+      <?php $query3 = mysqli_query($con,"SELECT `question3` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query3) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query3)) {
-               echo $row["question3"];
+                if($row["question3"] == ""){
+
+                }else {
+                  echo "<br>".$row["question3"]."<br>";
+                }
                       }
-              }?><br>
+              }?>
       
-      <br><?php $query4 = mysqli_query($con,"SELECT `question4` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
+      <?php $query4 = mysqli_query($con,"SELECT `question4` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query4) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query4)) {
-               echo $row["question4"];
+                if($row["question4"] == ""){
+
+                }else {
+                  echo "<br>".$row["question4"]."<br>";
+                }
                       }
-              }?><br>
+              }?>
       
-      <br> <?php $query5 = mysqli_query($con,"SELECT `question5` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
+       <?php $query5 = mysqli_query($con,"SELECT `question5` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query5) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query5)) {
-               echo $row["question5"];
+                if($row["question5"] == ""){
+
+                }else {
+                  echo "<br>".$row["question5"]."<br>";
+                }
                       }
-              }?><br>
+              }?>
       
-      <br> <?php $query6 = mysqli_query($con,"SELECT `question6` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
+      <?php $query6 = mysqli_query($con,"SELECT `question6` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query6) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query6)) {
-               echo $row["question6"];
+                if($row["question6"] == ""){
+
+                }else {
+                  echo "<br>".$row["question6"]."<br>";
+                }
                       }
-              }?><br>
+              }?>
      
-      <br><?php $query7 = mysqli_query($con,"SELECT `question7` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
+      <?php $query7 = mysqli_query($con,"SELECT `question7` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query7) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query7)) {
-               echo $row["question7"];
+                if($row["question7"] == ""){
+
+                }else {
+                  echo "<br>".$row["question7"]."<br>";
+                }
                       }
-              }?><br>
+              }?>
       
-      <br><?php $query8 = mysqli_query($con,"SELECT `question8` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
+      <?php $query8 = mysqli_query($con,"SELECT `question8` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query8) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query8)) {
-               echo $row["question8"];
+                if($row["question8"] == ""){
+
+                }else {
+                  echo "<br>".$row["question8"]."<br>";
+                }
                       }
-              }?><br>
+              }?>
       
-      <br><?php $query9 = mysqli_query($con,"SELECT `question9` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
+      <?php $query9 = mysqli_query($con,"SELECT `question9` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query9) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query9)) {
-               echo $row["question9"];
+                if($row["question9"] == ""){
+
+                }else {
+                  echo "<br>".$row["question9"]."<br>";
+                }
                       }
-              }?><br>
+              }?>
       
-      <br> <?php $query10 = mysqli_query($con,"SELECT `question10` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
+      <?php $query10 = mysqli_query($con,"SELECT `question10` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query10) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query10)) {
-               echo $row["question10"];
+                if($row["question10"] == ""){
+
+                }else {
+                  echo "<br>".$row["question10"]."<br>";
+                }
                       }
-              }?><br>
+              }?>
 </form>
             <div id = "Change" class = "modal">
             <div class="modal-content">
@@ -251,166 +288,246 @@ $DataEntry1 = 1;
           </div>
   <form class = "RadioButtons">
   
-  <br>  <header class = "Radio">Radion Button Questions  </header>     
-          <br><?php $query11 = mysqli_query($con,"SELECT `rc1` FROM `surveyquestions`   ORDER BY `id` DESC LIMIT 1 "); 
+  <br>  <header class = "Radio">Radio  Button Questions  </header>     
+          <?php $query11 = mysqli_query($con,"SELECT `rc1` FROM `surveyquestions`   ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query11) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query11)) {
-               echo $row["rc1"];
+                if($row["rc1"] == ""){
+
+                }else {
+                  echo "<br>".$row["rc1"]."<br>";
+                }
                       }
-              }?><br>
+              }?>
          
-          <br><?php $query12 = mysqli_query($con,"SELECT `rc2` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
+          <?php $query12 = mysqli_query($con,"SELECT `rc2` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query12) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query12)) {
-               echo $row["rc2"];
+                if($row["rc2"] == ""){
+
+                }else {
+                  echo "<br>".$row["rc2"]."<br>";
+                }
                       }
-              }?><br>
+              }?>
            
-          <br><?php $query13 = mysqli_query($con,"SELECT `rc3` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
+          <?php $query13 = mysqli_query($con,"SELECT `rc3` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query13) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query13)) {
-               echo $row["rc3"];
+                if($row["rc3"] == ""){
+
+                }else {
+                  echo "<br>".$row["rc3"]."<br>";
+                }
                       }
-              }?><br>
+              }?>
           
-          <br><?php $query14 = mysqli_query($con,"SELECT `rc4` FROM `surveyquestions` ORDER BY `id` DESC LIMIT 1 "); 
+          <?php $query14 = mysqli_query($con,"SELECT `rc4` FROM `surveyquestions` ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query14) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query14)) {
-               echo $row["rc4"];
+                if($row["rc4"] == ""){
+
+                }else {
+                  echo "<br>".$row["rc4"]."<br>";
+                }
                       }
-              }?><br>
+              }?>
             
-          <br><?php $query15 = mysqli_query($con,"SELECT `rc5` FROM `surveyquestions` ORDER BY `id` DESC LIMIT 1 "); 
+          <?php $query15 = mysqli_query($con,"SELECT `rc5` FROM `surveyquestions` ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query15) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query15)) {
-               echo $row["rc5"];
+                if($row["rc5"] == ""){
+
+                }else {
+                  echo "<br>".$row["rc5"]."<br>";
+                }
                       }
-              }?><br>
+              }?>
          
-          <br><?php $query16 = mysqli_query($con,"SELECT `rc6` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
+          <?php $query16 = mysqli_query($con,"SELECT `rc6` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query16) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query16)) {
-               echo $row["rc6"];
+                if($row["rc6"] == ""){
+
+                }else {
+                  echo "<br>".$row["rc6"]."<br>";
+                }
                       }
-              }?><br>
+              }?>
         
-          <br><?php $query17 = mysqli_query($con,"SELECT `rc7` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
+          <?php $query17 = mysqli_query($con,"SELECT `rc7` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query17) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query17)) {
-               echo $row["rc7"];
+                if($row["rc7"] == ""){
+
+                }else {
+                  echo "<br>".$row["rc7"]."<br>";
+                }
                       }
-              }?><br>
+              }?>
        
-          <br><?php $query18 = mysqli_query($con,"SELECT `rc8` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
+          <?php $query18 = mysqli_query($con,"SELECT `rc8` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query18) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query18)) {
-               echo $row["rc8"];
+                if($row["rc8"] == ""){
+
+                }else {
+                  echo "<br>".$row["rc8"]."<br>";
+                }
                       }
-              }?><br>
+              }?>
          
-          <br><?php $query19 = mysqli_query($con,"SELECT `rc9` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
+          <?php $query19 = mysqli_query($con,"SELECT `rc9` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query19) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query19)) {
-               echo $row["rc9"];
+                if($row["rc9"] == ""){
+
+                }else {
+                  echo "<br>".$row["rc9"]."<br>";
+                }
                       }
-              }?><br>
+              }?>
          
-          <br><?php $query20 = mysqli_query($con,"SELECT `rc10` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
+          <?php $query20 = mysqli_query($con,"SELECT `rc10` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query20) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query20)) {
-               echo $row["rc10"];
+                if($row["rc10"] == ""){
+
+                }else {
+                  echo "<br>".$row["rc10"]."<br>";
+                }
                       }
-              }?><br>
+              }?>
       
-          <br><?php $query21 = mysqli_query($con,"SELECT `rc11` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
+          <?php $query21 = mysqli_query($con,"SELECT `rc11` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query21) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query21)) {
-               echo $row["rc11"];
+                if($row["rc11"] == ""){
+
+                }else {
+                  echo "<br>".$row["rc11"]."<br>";
+                }
                       }
-              }?><br>
+              }?>
            
-          <br><?php $query22 = mysqli_query($con,"SELECT `rc12` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
+          <?php $query22 = mysqli_query($con,"SELECT `rc12` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query22) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query22)) {
-               echo $row["rc12"];
+                if($row["rc12"] == ""){
+
+                }else {
+                  echo "<br>".$row["rc12"]."<br>";
+                }
                       }
-              }?><br>
+              }?>
           
-          <br><?php $query23 = mysqli_query($con,"SELECT `rc13` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
+          <?php $query23 = mysqli_query($con,"SELECT `rc13` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query23) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query23)) {
-               echo $row["rc13"];
+                if($row["rc13"] == ""){
+
+                }else {
+                  echo "<br>".$row["rc13"]."<br>";
+                }
                       }
-              }?><br>
+              }?>
            
-          <br><?php $query24 = mysqli_query($con,"SELECT `rc14` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
+          <?php $query24 = mysqli_query($con,"SELECT `rc14` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query24) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query24)) {
-               echo $row["rc14"];
+                if($row["rc14"] == ""){
+
+                }else {
+                  echo "<br>".$row["rc14"]."<br>";
+                }
                       }
-              }?><br>
+              }?>
        
-          <br><?php $query25 = mysqli_query($con,"SELECT `rc15` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
+          <?php $query25 = mysqli_query($con,"SELECT `rc15` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query25) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query25)) {
-               echo $row["rc15"];
+                if($row["rc15"] == ""){
+
+                }else {
+                  echo "<br>".$row["rc15"]."<br>";
+                }
                       }
-              }?><br>
+              }?>
              
-          <br><?php $query26 = mysqli_query($con,"SELECT `rc16` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
+          <?php $query26 = mysqli_query($con,"SELECT `rc16` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query26) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query26)) {
-               echo $row["rc16"];
-                      }
-              }?><br>
+                if($row["rc16"] == ""){
 
-          <br><?php $query27 = mysqli_query($con,"SELECT `rc17` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
+                }else {
+                  echo "<br>".$row["rc16"]."<br>";
+                }
+                      }
+              }?>
+
+          <?php $query27 = mysqli_query($con,"SELECT `rc17` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query27) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query27)) {
-               echo $row["rc17"];
+                if($row["rc17"] == ""){
+
+                }else {
+                  echo "<br>".$row["rc17"]."<br>";
+                }
                       }
-              }?><br>
+              }?>
          
-          <br><?php $query28 = mysqli_query($con,"SELECT `rc18` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
+          <?php $query28 = mysqli_query($con,"SELECT `rc18` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query28) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query28)) {
-               echo $row["rc18"];
+                if($row["rc18"] == ""){
+
+                }else {
+                  echo "<br>".$row["rc18"]."<br>";
+                }
                       }
-              }?><br> 
+              }?>
          
-          <br><?php $query29 = mysqli_query($con,"SELECT `rc19` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
+          <?php $query29 = mysqli_query($con,"SELECT `rc19` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query29) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query29)) {
-               echo $row["rc19"];
+                if($row["rc19"] == ""){
+
+                }else {
+                  echo "<br>".$row["rc19"]."<br>";
+                }
                       }
-              }?><br>
+              }?>
    
-          <br><?php $query30 = mysqli_query($con,"SELECT `rc20` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
+         <?php $query30 = mysqli_query($con,"SELECT `rc20` FROM `surveyquestions`  ORDER BY `id` DESC LIMIT 1 "); 
             if (mysqli_num_rows($query30) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query30)) {
-               echo $row["rc20"];
+                if($row["rc20"] == ""){
+
+                }else {
+                  echo "<br>".$row["rc20"]."<br>";
+                }
                       }
-              }?><br>
+              }?>
           
       </form>
     

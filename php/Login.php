@@ -10,7 +10,7 @@ phpCAS::setVerbose(true);
 phpCAS::client(CAS_VERSION_2_0, "cas.isg.siue.edu",443, "itscas");
 // For production use set the CA certificate that is the issuer of the cert
 // on the CAS server and uncomment the line below
- phpCAS::setCasServerCACert("../php/CASCertificate.cer");
+ phpCAS::setCasServerCACert("../CASCertificate.cer");
 
 // force CAS authentication
 phpCAS::forceAuthentication();

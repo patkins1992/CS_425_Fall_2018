@@ -78,7 +78,7 @@ if ($result->num_rows > 0) {
               $error = $_FILES['myfile']['error'];
               $type = $_FILES['myfile']['type'];
               
-              echo "$name" . "$tmp_name". "$type";
+              
 
               if(isset($_POST["submit"])){
               $target = "../reports/";
@@ -87,16 +87,45 @@ if ($result->num_rows > 0) {
               $Company = $_POST["StudentCompany"];
               $StudentName = $_POST["StudentName"];
               $Year = $_POST["CurrentYear"];
+              
               $Choice = $_POST["SemsterChoice"];
               $Id = $select + 1;
-              $newfileName = $Company . "_". $StudentName ."_". $Year.".pdf"; 
-              move_uploaded_file($_FILES["myfile"]["tmp_name"],$target.$newfileName); 
+              $FindID = 1;
+              $selectName = "";
+              while($FindID < $select){
+              $FindCompany = "SELECT `name` FROM `location` WHERE `id` = $FindID";
+              $resultCompany = mysqli_query($con,$FindCompany);
+              if ($resultCompany->num_rows > 0) {
+                // output data of eah row
+                while($row1 = mysqli_fetch_assoc($resultCompany)){
+                $selectName = $row1['name'];
+                
+                }
+               
+              }
+              if($Company == $selectName){
+                $newfileName = $Company . "_". $StudentName ."_". $Year.".pdf"; 
+                move_uploaded_file($_FILES["myfile"]["tmp_name"],$target.$newfileName); 
+  
+  
+                $insert = "INSERT INTO `report` (`id`, `filepath`, `final`, `company`, `year`) VALUES ('$Id', '../reports/$newfileName',NULL, '$Company', '$Year')";
+                mysqli_query($con,$insert);
+                break;
 
-
-              $insert = "INSERT INTO `report` (`id`, `filepath`, `final`, `company`, `year`) VALUES ('$Id', '../reports/$newfileName',NULL, '$Company', '$Year')";
-              mysqli_query($con,$insert);
+              }
+              $FindID = $FindID + 1;
             }
+            
+            if($FindID >= $select){
+              echo "Please enter the correct company";
+              
+            }
+
           }
+        }
+
+            
+          
             ?>
 
           </div>

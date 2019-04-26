@@ -263,3 +263,70 @@ EF56 .=> phpCAS::setCasServerCACert('../php/CASCertificate.cer') [Login.php:13]
 EF56 .|    => phpCAS::error('CAS_InvalidArgumentException: Certificate file does not exist CAS_Request_CurlRequest') [CAS.php:1648]
 EF56 .|    |    CAS_InvalidArgumentException: Certificate file does not exist CAS_Request_CurlRequest in C:\Users\Matthew\Documents\Cs425\CS_425_Fall_2018\php\Login.phpon line 13 [CAS.php:573]
 EF56 .|    <= ''
+56AE .START (2019-04-25 19:01:57) phpCAS-1.3.7+ ****************** [CAS.php:475]
+56AE .=> phpCAS::client('2.0', 'cas.isg.siue.edu', 443, 'itscas') [Login.php:10]
+56AE .|    => CAS_Client::__construct('2.0', false, 'cas.isg.siue.edu', 443, 'itscas', true) [CAS.php:366]
+56AE .|    |    Starting a new session io7nici9c9trk4q4a14efdd5gt [Client.php:932]
+56AE .|    |    Session is not authenticated [Client.php:938]
+56AE .|    <= ''
+56AE .<= ''
+56AE .=> phpCAS::setCasServerCACert('../php/CASCertificate.cer') [Login.php:13]
+56AE .|    => phpCAS::error('CAS_InvalidArgumentException: Certificate file does not exist CAS_Request_CurlRequest') [CAS.php:1648]
+56AE .|    |    CAS_InvalidArgumentException: Certificate file does not exist CAS_Request_CurlRequest in C:\Users\Matthew\Documents\Cs425\CS_425_Fall_2018\php\Login.phpon line 13 [CAS.php:573]
+56AE .|    <= ''
+3E7D .START (2019-04-25 19:06:54) phpCAS-1.3.7+ ****************** [CAS.php:475]
+3E7D .=> phpCAS::client('2.0', 'cas.isg.siue.edu', 443, 'itscas') [Login.php:10]
+3E7D .|    => CAS_Client::__construct('2.0', false, 'cas.isg.siue.edu', 443, 'itscas', true) [CAS.php:366]
+3E7D .|    |    Starting a new session io7nici9c9trk4q4a14efdd5gt [Client.php:932]
+3E7D .|    |    Session is not authenticated [Client.php:938]
+3E7D .|    <= ''
+3E7D .<= ''
+3E7D .=> phpCAS::setCasServerCACert('../CASCertificate.cer') [Login.php:13]
+3E7D .<= ''
+3E7D .=> phpCAS::forceAuthentication() [Login.php:16]
+3E7D .|    => CAS_Client::forceAuthentication() [CAS.php:1120]
+3E7D .|    |    => CAS_Client::isAuthenticated() [Client.php:1275]
+3E7D .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1387]
+3E7D .|    |    |    |    no user found [Client.php:1629]
+3E7D .|    |    |    <= false
+3E7D .|    |    |    no ticket found [Client.php:1488]
+3E7D .|    |    <= false
+3E7D .|    |    => CAS_Client::redirectToCas(false) [Client.php:1284]
+3E7D .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1650]
+3E7D .|    |    |    |    => CAS_Client::getURL() [Client.php:342]
+3E7D .|    |    |    |    |    Final URI: http://localhost/CS_425_Fall_2018/php/Login.php [Client.php:3528]
+3E7D .|    |    |    |    <= 'http://localhost/CS_425_Fall_2018/php/Login.php'
+3E7D .|    |    |    <= 'https://cas.isg.siue.edu/itscas/login?service=http%3A%2F%2Flocalhost%2FCS_425_Fall_2018%2Fphp%2FLogin.php'
+3E7D .|    |    |    Redirect to : https://cas.isg.siue.edu/itscas/login?service=http%3A%2F%2Flocalhost%2FCS_425_Fall_2018%2Fphp%2FLogin.php [Client.php:1657]
+3E7D .|    |    |    exit()
+3E7D .|    |    |    -
+3E7D .|    |    -
+3E7D .|    -
+F740 .START (2019-04-26 04:56:56) phpCAS-1.3.7+ ****************** [CAS.php:475]
+F740 .=> phpCAS::client('2.0', 'cas.isg.siue.edu', 443, 'itscas') [Login.php:10]
+F740 .|    => CAS_Client::__construct('2.0', false, 'cas.isg.siue.edu', 443, 'itscas', true) [CAS.php:366]
+F740 .|    |    Starting a new session io7nici9c9trk4q4a14efdd5gt [Client.php:932]
+F740 .|    |    Session is not authenticated [Client.php:938]
+F740 .|    <= ''
+F740 .<= ''
+F740 .=> phpCAS::setCasServerCACert('../CASCertificate.cer') [Login.php:13]
+F740 .<= ''
+F740 .=> phpCAS::forceAuthentication() [Login.php:16]
+F740 .|    => CAS_Client::forceAuthentication() [CAS.php:1120]
+F740 .|    |    => CAS_Client::isAuthenticated() [Client.php:1275]
+F740 .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1387]
+F740 .|    |    |    |    no user found [Client.php:1629]
+F740 .|    |    |    <= false
+F740 .|    |    |    no ticket found [Client.php:1488]
+F740 .|    |    <= false
+F740 .|    |    => CAS_Client::redirectToCas(false) [Client.php:1284]
+F740 .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1650]
+F740 .|    |    |    |    => CAS_Client::getURL() [Client.php:342]
+F740 .|    |    |    |    |    Final URI: http://localhost/CS_425_Fall_2018/php/Login.php [Client.php:3528]
+F740 .|    |    |    |    <= 'http://localhost/CS_425_Fall_2018/php/Login.php'
+F740 .|    |    |    <= 'https://cas.isg.siue.edu/itscas/login?service=http%3A%2F%2Flocalhost%2FCS_425_Fall_2018%2Fphp%2FLogin.php'
+F740 .|    |    |    Redirect to : https://cas.isg.siue.edu/itscas/login?service=http%3A%2F%2Flocalhost%2FCS_425_Fall_2018%2Fphp%2FLogin.php [Client.php:1657]
+F740 .|    |    |    exit()
+F740 .|    |    |    -
+F740 .|    |    -
+F740 .|    -

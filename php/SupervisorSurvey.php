@@ -156,7 +156,7 @@ $QuestionId = $_GET["QuestionId"];
                 <input type = "radio" name = "scale" class = "three"> <label for = "three">3</label> 
                 <input type = "radio" name = "scale" class = "four"> <label for = "four">4</label> 
                 <input type = "radio" name = "scale" class = "five"> <label for = "five">5</label>  
-                <br>Question 15: <?php $query15 = mysqli_query($con,"SELECT `rc5` FROM `surveyquestions` WHERE `id` = $QuestionId"); 
+            <br>Question 15: <?php $query15 = mysqli_query($con,"SELECT `rc5` FROM `surveyquestions` WHERE `id` = $QuestionId"); 
             if (mysqli_num_rows($query15) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query15)) {
@@ -168,7 +168,7 @@ $QuestionId = $_GET["QuestionId"];
                 <input type = "radio" name = "scale" class = "three"> <label for = "three">3</label> 
                 <input type = "radio" name = "scale" class = "four"> <label for = "four">4</label> 
                 <input type = "radio" name = "scale" class = "five"> <label for = "five">5</label>  
-                <br><?php $query16 = mysqli_query($con,"SELECT `rc6` FROM `surveyquestions` WHERE `id` = $QuestionId"); 
+                <br>Question 16: <?php $query16 = mysqli_query($con,"SELECT `rc6` FROM `surveyquestions` WHERE `id` = $QuestionId"); 
             if (mysqli_num_rows($query16) > 0) {
               // output data of each row
               while($row = mysqli_fetch_assoc($query16)) {
