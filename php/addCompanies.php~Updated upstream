@@ -70,14 +70,14 @@ if ($result->num_rows > 0) {
     <label for="option">Enter Company Name: </label>
       <input type="text" name="companyName" value="Enter Company Name">
 
-      <input type="submit" name="submit" class="button" value="Add Company" style="border:2;"/>
+      <input type="submit" name="submit" class="button" value="Add" style="border:2;"/>
 
       <?php
 
               if(isset($_POST["submit"])){
 
               $Id = $select + 1;
-              var $name = $_POST["companyName"];
+              $name = $_POST["companyName"];
 
               $insert = "INSERT INTO `location` (`id`, `name`) VALUES ('$Id', '$name')";
               mysqli_query($con,$insert);
